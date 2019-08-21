@@ -18,6 +18,8 @@ export class WordsComponent implements OnInit {
   private newEn: string;
   private newVn: string;
 
+  isShowForm = false;
+
   addWord() {
     this.arrWords.push({
       id: this.arrWords.length + 1,
@@ -25,6 +27,9 @@ export class WordsComponent implements OnInit {
       vn: this.newVn,
       memorized: false
     });
+    this.newVn = '';
+    this.newEn = '';
+    this.isShowForm = false;
   }
 
   constructor() {
