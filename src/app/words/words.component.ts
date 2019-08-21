@@ -32,6 +32,11 @@ export class WordsComponent implements OnInit {
     this.isShowForm = false;
   }
 
+  removeWord(id: number) {
+    const index = this.arrWords.findIndex(words => words.id === id);
+    this.arrWords.splice(index, 1);
+  }
+
   constructor() {
   }
 

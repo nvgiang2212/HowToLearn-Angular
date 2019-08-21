@@ -10,10 +10,14 @@
     <th>id</th>
     <th>en</th>
     <th>vn</th>
+    <th></th>
   </tr>
   <tr *ngFor="let words of arrWords">
     <td>{{words.id}}</td>
     <td [ngStyle]="{color: words.memorized ? 'green':'red'}">{{words.en}}</td>
     <td>{{words.vn}}</td>
+    <td>
+      <button (click)="removeWord(words.id)">Delete</button>
+    </td>
   </tr>
 </table>
