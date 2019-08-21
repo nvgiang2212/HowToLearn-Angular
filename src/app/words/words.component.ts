@@ -15,6 +15,17 @@ export class WordsComponent implements OnInit {
     {id: 5, en: 'bath', vn: 'Tam', memorized: false},
     {id: 6, en: 'bedroom', vn: 'Phong ngu', memorized: true},
   ];
+  private newEn: string;
+  private newVn: string;
+
+  addWord() {
+    this.arrWords.push({
+      id: this.arrWords.length + 1,
+      en: this.newEn,
+      vn: this.newVn,
+      memorized: false
+    });
+  }
 
   constructor() {
   }
