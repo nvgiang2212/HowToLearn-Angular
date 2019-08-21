@@ -1,0 +1,13 @@
+<h5>Green: True - Red: False</h5>
+<table cellpadding="10">
+  <tr>
+    <th>id</th>
+    <th>en</th>
+    <th>vn</th>
+  </tr>
+  <tr *ngFor="let words of arrWords">
+    <td>{{words.id}}</td>
+    <td [ngStyle]="{color: words.memorized ? 'green':'red'}">{{words.en}}</td>
+    <td>{{words.vn}}</td>
+  </tr>
+</table>

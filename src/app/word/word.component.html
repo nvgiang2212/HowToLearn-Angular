@@ -1,0 +1,20 @@
+<h3>{{vn}}</h3>
+<button (click)="toggleForgot()">Toggle forgot</button>
+<h3 [hidden]="forgot">{{en}}</h3>
+<br>
+<label>Name: </label>
+<input type="text" placeholder="Type text" (keyup)="showName($event.target.value)">
+<br>
+<label>GirlUrl: </label>
+<input type="url" placeholder="Type url" (change)="showImage($event.target.value)">
+<br><br>
+<img [src]="imageUrl" alt="" width="300px">
+<h4>Image name: {{humanName}}</h4>
+<h4 [style.color]="isHightlight ? 'red':'orange'">Image name: {{txtUsername.value | json}}</h4>
+<br>
+<div [class]="isHightlight?'circle':'square'"></div>
+<label>Content: </label>
+<input type="text" placeholder="Type content" [(ngModel)]="humanName" #txtUsername>
+<br>
+<h3 [ngStyle]="humanName.length % 2 === 0 ? evenStyle : oddStyle">What's do you says?</h3>
+<div [ngClass]="humanName.length % 2 === 0 ? 'square':'circle'"></div>
