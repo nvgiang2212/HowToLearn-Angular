@@ -5,19 +5,19 @@
   <button (click)="addWord();">Add Word</button>
 </div>
 <button (click)="isShowForm = true" *ngIf="!isShowForm">Them tu moi</button>
-<table cellpadding="10">
-  <tr>
-    <th>id</th>
-    <th>en</th>
-    <th>vn</th>
-    <th></th>
-  </tr>
-  <tr *ngFor="let words of arrWords">
-    <td>{{words.id}}</td>
-    <td [ngStyle]="{color: words.memorized ? 'green':'red'}">{{words.en}}</td>
-    <td>{{words.vn}}</td>
-    <td>
-      <button (click)="removeWord(words.id)">Delete</button>
-    </td>
-  </tr>
-</table>
+<br>
+<select [(ngModel)]="filterStatus">
+  <option value="XEM_TAT_CA">See All</option>
+  <option value="XEM_TU_DA_NHO">See Remember Words</option>
+  <option value="XEM_TU_CHUA_NHO">See Forget Words</option>
+</select>
+  <div *ngFor="let words of arrWords" class="card">
+    <div *ngIf="getShowStatus(words.memorized)">
+      <div class="card-header" [ngStyle]="{color: words.memorized ? 'green':'red'} ">{{words.en}}</div>
+      <div class="card-body">{{words.vn}}</div>
+      <div class="card-footer">
+        <button (click)="removeWord(words.id)">Delete</button>
+      </div>
+    </div>
+
+  </div>

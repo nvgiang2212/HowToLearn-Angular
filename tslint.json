@@ -6,7 +6,8 @@
     "variable-name": [
       true,
       "check-format",
-      "allow-trailing-underscore"
+      "allow-trailing-underscore",
+      "allow-leading-underscore"
     ],
     "deprecation": {
       "severity": "warning"

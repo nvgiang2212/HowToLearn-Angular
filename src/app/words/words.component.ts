@@ -17,7 +17,7 @@ export class WordsComponent implements OnInit {
   ];
   private newEn: string;
   private newVn: string;
-
+  filterStatus: 'XEM_TAT_CA';
   isShowForm = false;
 
   addWord() {
@@ -35,6 +35,15 @@ export class WordsComponent implements OnInit {
   removeWord(id: number) {
     const index = this.arrWords.findIndex(words => words.id === id);
     this.arrWords.splice(index, 1);
+  }
+
+  getShowStatus(memorized: boolean) {
+    const dkXemTatCa = this.filterStatus === 'XEM_TAT_CA';
+    // @ts-ignore
+    const dkXemDaNho = this.filterStatus === 'XEM_TU_DA_NHO' && memorized;
+    // @ts-ignore
+    const dkXemChuaNho = this.filterStatus === 'XEM_TU_CHUA_NHO' && !memorized;
+    return dkXemTatCa || dkXemDaNho || dkXemChuaNho;
   }
 
   constructor() {
