@@ -17,7 +17,7 @@ export class WordsComponent implements OnInit {
   ];
   private newEn: string;
   private newVn: string;
-  filterStatus: 'XEM_TAT_CA';
+  filterStatus = 'XEM_TAT_CA';
   isShowForm = false;
 
   addWord() {

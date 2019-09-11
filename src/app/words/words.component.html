@@ -13,10 +13,15 @@
 </select>
   <div *ngFor="let words of arrWords" class="card">
     <div *ngIf="getShowStatus(words.memorized)">
-      <div class="card-header" [ngStyle]="{color: words.memorized ? 'green':'red'} ">{{words.en}}</div>
+      <div class="card-header" [ngStyle]="{color: words.memorized ? 'green':'red'} ">
+        {{words.en}}
+      </div>
       <div class="card-body">{{words.vn}}</div>
       <div class="card-footer">
         <button (click)="removeWord(words.id)">Delete</button>
+        <button (click)="words.memorized = !words.memorized">
+          {{ words.memorized ? 'forget':'remembered'}}
+        </button>
       </div>
     </div>
 
