@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { StructComponent } from './struct/struct.component';
 import { WordsComponent } from './words/words.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { WordsComponent } from './words/words.component';
     CalculatorComponent,
     StructComponent,
     WordsComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,
