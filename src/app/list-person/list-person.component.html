@@ -1,0 +1,5 @@
+<h2>List Person</h2>
+// thẻ ng-container khi inspect sẽ mất đi (ko hiện)
+<ng-container *ngFor="let person of arrPeople">
+  <app-person [name]="person.name" [age]="person.age"></app-person>
+</ng-container>
