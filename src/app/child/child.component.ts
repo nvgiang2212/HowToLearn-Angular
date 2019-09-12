@@ -6,15 +6,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./child.component.scss']
 })
 export class ChildComponent implements OnInit {
-  @Output() myClick = new EventEmitter<boolean>();
-
-  addForParent() {
-    this.myClick.emit(true);
-  }
-
-  subForParent() {
-    this.myClick.emit(false);
-  }
+  value = 0;
 
   constructor() {
   }

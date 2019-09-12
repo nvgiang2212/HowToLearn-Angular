@@ -1,2 +1,2 @@
-<h3>Count: {{value}}</h3>
-<app-child (myClick)="changeCount($event)"></app-child>
+<button (click)="child.value = child.value + 1">Add</button>
+<app-child #child></app-child>
