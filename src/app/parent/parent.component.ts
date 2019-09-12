@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {isBoolean} from 'util';
 
 @Component({
   selector: 'app-parent',
@@ -8,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
   value = 0;
 
-  constructor() { }
+  changeCount(isAdd: boolean) {
+    if (isAdd) {
+      this.value = this.value + 1;
+    } else {
+      this.value = this.value - 1;
+    }
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
