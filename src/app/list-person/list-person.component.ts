@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-list-person',
@@ -7,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPersonComponent implements OnInit {
   arrPeople = [
-    {name: 'David', age: '34'},
-    {name: 'Sean', age: '21'},
-    {name: 'Taylor', age: '29'}
+    {name: 'David', age: 34},
+    {name: 'Sean', age: 21},
+    {name: 'Taylor', age: 29}
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  removeByPerson(name: string) {
+    const index = this.arrPeople.findIndex(
+      people => people.name === name
+    );
+    this.arrPeople.splice(index, 1);
+  }
 }
